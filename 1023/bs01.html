@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <script src="../js/bootstrap.bundle.js"></script>
+
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      display: inline-block;
+    }
+
+    .box2 {
+      width: 100px;
+      height: 100px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nobs-clearfix::after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="div01">
+    <h3>블록 레벨 버튼</h3>
+    <!-- 일반적인 버튼은 컨텐츠의 크기에 의해서 버튼의 크기를 결정함 -->
+    <!-- css의 width 속성을 통해서 버튼의 크기를 설정할 수 있음 -->
+    <!-- 부트스트랩에서는 블록 레벨 버튼을 지원하여 부모 태그의 너비에 의해서 크기가 결정되는 버튼을 만들 수 있음 -->
+    <!-- 부모 태그에 .d-grid 클래스 추가 -->
+    <!-- 블록 레벨 버튼이 여러개일 경우 .gap-{크기} 클래스를 추가하여 버튼의 간격을 지정할 수 있음 -->
+    <!-- .gap-{크기}는 0 ~ 5까지 존재 -->
+    <div>
+      <div>
+        <h4>일반 버튼</h4>
+        <button class="btn btn-primary">일반 버튼</button>
+        <button class="btn btn-secondary">컨텐츠 크기에 따라 버튼의 크기가 결정됨</button>
+        <button class="btn btn-success" style="width: 500px;">style 속성의 width 크기로 버튼 크기 결정 가능함</button>
+      </div>
+      <br>
+      <div class="border border-2 p-3 d-grid gap-2">
+        <button class="btn btn-primary" disabled>블록 레벨 버튼</button>
+        <button class="btn btn-success" disabled="disabled">2번째 블록 레벨 버튼</button>
+      </div>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+      <h3>텍스트 색상</h3>
+      <!-- 부트스트랩에서 미리 디자인한 색상을 사용할 수 있음 -->
+      <!-- primary, secondary, success, info, warning, danger, light, dark, muted, body, white -->
+      <!-- .text-{테마컬러} 클래스를 추가하여 사용 -->
+
+      <div>
+        <p class="text-primary">부트스트랩 텍스트 테마 컬러 primary</p>
+        <p class="text-secondary">부트스트랩 텍스트 테마 컬러 secondary</p>
+        <p class="text-success">부트스트랩 텍스트 테마 컬러 success</p>
+        <p class="text-info">부트스트랩 텍스트 테마 컬러 info</p>
+        <p class="text-warning">부트스트랩 텍스트 테마 컬러 warning</p>
+        <p class="text-danger">부트스트랩 텍스트 테마 컬러 danger</p>
+        <p class="text-light p-3 bg-dark">부트스트랩 텍스트 테마 컬러 light</p>
+        <p class="text-dark">부트스트랩 텍스트 테마 컬러 dark</p>
+        <p class="text-muted">부트스트랩 텍스트 테마 컬러 muted</p>
+        <p class="text-body">부트스트랩 텍스트 테마 컬러 body</p>
+        <p class="text-white p-3 bg-dark">부트스트랩 텍스트 테마 컬러 white</p>
+      </div>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+      <h3>링크 테마 색상</h3>
+      <!-- 링크 색상도 부트스트랩 테마 컬러를 사용할 수 있음 -->
+      <!-- .link-{테마컬러} 로 사용, primary, secondary, success, info, warning, danger, dark, light 사용 -->
+      <div>
+        <a href="#" class="">미사용</a>
+        <a href="#" class="btn btn-link">미사용</a>
+        <a href="#" class="link-primary">primary</a>
+        <a href="#" class="link-secondary">secondary</a>
+        <a href="#" class="link-success">success</a>
+        <a href="#" class="link-info">info</a>
+        <a href="#" class="btn btn-link link-warning">warning</a>
+        <a href="#" class="btn btn-link link-danger">danger</a>
+        <a href="#" class="btn btn-link link-light bg-dark">light</a>
+        <a href="#" class="btn btn-link link-dark">dark</a>
+      </div>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+      <h3>글자 색상 불투명도</h3>
+      <!-- 글자 색상에 불투명도를 추가하여 연하게 표현하고 싶을 경우 사용 -->
+      <!-- .text-black-50, .text-white-50 클래스를 사용 -->
+      <!-- css의 opacity 속성을 사용하는 .text-opacity-25, .text-opacity-50, .text-opacity-75, .text-opacity-100 이 있음 -->
+      <div>
+        <h2>일반 글자 색상</h2>
+        <h2 class="p-3 text-body text-black-50">text-black-50</h2>
+        <h2 class="p-3 text-white text-white-50 bg-dark">text-white-50</h2>
+        <h2 class="text-primary text-opacity-100">text-opacity-100</h2>
+        <h2 class="text-primary text-opacity-75">text-opacity-75</h2>
+        <h2 class="text-primary text-opacity-50">text-opacity-50</h2>
+        <h2 class="text-primary text-opacity-25">text-opacity-25</h2>
+      </div>
+    </div>
+
+    <div>
+      <h3>배경 테마 색상</h3>
+      <!-- html 태그의 배경에 부트스트랩에서 디자인한 배경 색상을 사용할 수 있음 -->
+      <!-- .bg-{테마색상} 을 클래스에 사용, primary, secondary, success, info, warning, danger, dark, light 개의 기본 색상과 body, white, transparent 3가지가 추가됨 -->
+
+      <div class="p-3 bg-primary bg-opacity-25">
+        <div class="bg-primary border box">primary</div>
+        <div class="bg-secondary border box">secondary</div>
+        <div class="bg-success border box">success</div>
+        <div class="bg-info border box">info</div>
+        <div class="bg-warning border box">warning</div>
+        <div class="bg-danger border box">danger</div>
+        <div class="bg-dark border box text-white">dark</div>
+        <div class="bg-light border box">light</div>
+        <div class="bg-body border box">body</div>
+        <div class="bg-white border box">white</div>
+        <div class="bg-transparent border box">transparent</div>
+      </div>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+      <h3>배경 불투명도</h3>
+      <!-- css의 opacity 속성을 쉽게 사용할 수 있도록 부트스트랩에서 제공함 -->
+      <!-- .bg-opacity-{투명도} 를 클래스에 사용, 10, 25, 50, 75 사용 가능 -->
+      <div class="bg-danger bg-opacity-25">
+        <div class="box border bg-primary bg-opacity-10">bg-opacity-10</div>
+        <div class="box border bg-primary bg-opacity-25">bg-opacity-25</div>
+        <div class="box border bg-primary bg-opacity-50">bg-opacity-50</div>
+        <div class="box border bg-primary bg-opacity-75">bg-opacity-75</div>
+        <div class="box border bg-primary">default</div>
+      </div>
+    </div>
+
+    <div>
+      <h3>여백 주기</h3>
+      <!-- css의 margin, padding 을 쉽게 하기 위해서 부트스트랩에서 미리 디자인 함 -->
+      <!-- {속성}{위치}-{화면크기}-{여백크기} 혹은 {속성}{위치}-{여백크기} 를 클래스에 추가하여 사용 -->
+      <!-- {속성}-{여백크기} 로 사용 시 상하좌우 모두 같은 크기로 설정됨 -->
+      <!-- m : margin, p : padding -->
+      <!-- t : top, b : bottom, s : start, e : end, x : start and end, y : top and bottom, -->
+      <!-- 0 : 0px, 1 : 4px, 2 : 8px, 3 : 16px; 4 : 24px, 5 : 48px, auto : 자동 크기 설정 -->
+
+      <div class="border p-0 m-0 d-flex">
+        <div class="box2  bg-primary mt-4">margin-top</div>
+        <div class="box2  bg-success me-4">margin-end</div>
+        <div class="box2  bg-info mb-4">margin-bottom</div>
+        <div class="box2  bg-warning ms-4">margin-start</div>
+      </div>
+
+      <br>
+      
+      <div class="border p-0 m-0 d-flex">
+        <div class=" bg-primary ms-0" style="width: 100px; height: 100px;">ms-0</div>
+        <div class=" bg-success ms-1" style="width: 100px; height: 100px;">ms-1</div>
+        <div class=" bg-info ms-2" style="width: 100px; height: 100px;">ms-2</div>
+        <div class=" bg-secondary ms-3" style="width: 100px; height: 100px;">ms-3</div>
+        <div class=" bg-warning ms-4" style="width: 100px; height: 100px;">ms-4</div>
+        <div class=" bg-danger ms-5" style="width: 100px; height: 100px;">ms-5</div>
+      </div>
+
+      <br>
+
+      <div class="border p-0 m-0 d-flex">
+        <div class="box2 bg-primary mx-5">mx-5</div>
+        <div class="box2 bg-success my-5">my-5</div>
+      </div>
+      <div class="border p-0 m-0 d-flex">
+        <div class="box2 bg-primary mx-auto">mx-auto</div>
+      </div>
+
+      <br>
+
+      <div class="border p-5 m-0">p-5
+        <div class="border border-2 bg-primary p-4" >p-4
+          <div class="border border-2 bg-success p-3">p-3
+            <div class="border border-2 bg-info p-2">p-2
+              <div class="border border-2 bg-warning p-1">p-1
+                <div class="border border-2 bg-danger p-0 box2">p-0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br><hr><br>
+
+    <h3>display</h3>
+    <!-- css의 display 속성을 쉽게 사용하도록 부트스트랩에서 미리 디자인 함 -->
+    <!-- .d-{display속성명}을 클래스에 사용 -->
+    <!-- none, inline, block, flex, inline-block, inline-flex, grid, table, table-cell, table-row -->
+
+    <div>
+      <div class="box2 bg-primary d-none">d-none</div>
+    </div>
+    <br>
+    <div>
+      <span class="box2 bg-primary d-block">d-block</span>
+      <span class="box2 bg-success d-block">d-block</span>
+      <span class="box2 bg-info d-block">d-block</span>
+    </div>
+    <br>
+    <div>
+      <div class="box2 bg-primary d-inline">d-inline</div>
+      <div class="box2 bg-success d-inline">d-inline</div>
+      <div class="box2 bg-info d-inline">d-inline</div>
+    </div>
+    <br>
+    <div>
+      <div class="border d-flex justify-content-center">
+        <div class="box2 bg-primary">d-flex</div>
+        <div class="box2 bg-success">d-flex</div>
+        <div class="box2 bg-info">d-flex</div>
+      </div>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+      <h3>border</h3>
+      <!-- css의 border 속성을 쉽게 사용하도록 부트스트랩에서 미리 디자인됨 -->
+      <!-- .border 클래스를 추가하여 사용 -->
+      <!-- 테두리의 굵기를 지정하기 위해서 .border-{크기}를 추가, 0 ~ 5 까지 존재함 -->
+      <!-- .border-0 사용 시 원하는 방향을 .border-{방향}-0 을 추가하여 사용할 수 있음 -->
+      <!-- .border-{테마컬러} 를 사용하여 테두리 색상을 변경할 수 있음 -->
+      <!-- primary, secondary, success, info, warning, danger, dark, light, black, white -->
+      <div class="d-flex">
+        <div class="box2 me-2 border"></div>
+        <div class="box2 me-2 border border-0"></div>
+        <div class="box2 me-2 border border-1"></div>
+        <div class="box2 me-2 border border-2"></div>
+        <div class="box2 me-2 border border-3"></div>
+        <div class="box2 me-2 border border-4"></div>
+        <div class="box2 me-2 border border-5"></div>
+      </div>
+      <br>
+      <div>
+        <div class="box2 me-2 border border-top-0 m-1"></div>
+        <div class="box2 me-2 border border-end-0 m-1"></div>
+        <div class="box2 me-2 border border-bottom-0 m-1"></div>
+        <div class="box2 me-2 border border-start-0 m-1"></div>
+      </div>
+      <br>
+      <div class="d-flex">
+        <div class="box2 me-2 border border-primary"></div>
+        <div class="box2 me-2 border border-secondary"></div>
+        <div class="box2 me-2 border border-success"></div>
+        <div class="box2 me-2 border border-info"></div>
+        <div class="box2 me-2 border border-warning"></div>
+        <div class="box2 me-2 border border-danger"></div>
+        <div class="box2 me-2 border border-dark"></div>
+        <div class="p-3 bg-dark">
+          <div class="box2 me-2 border border-light"></div>
+        </div>
+        
+        <div class="box2 me-2 border border-black"></div>
+        <div class="p-3 bg-dark">
+          <div class="box2 me-2 border border-white"></div>
+        </div>
+      </div>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+      <h3>Radius</h3>
+      <!-- css의 border-radius를 쉽게 사용하기 위해서 부트스트랩에서 미리 디자인 됨 -->
+      <!-- .rounded 를 클래스에 추가하여 사용 -->
+      <!-- 라운드 처리의 정도를 변경하기 위해서 .rounded-{크기} 를 대신 사용, 0 ~ 5까지 사용 가능 -->
+      <!-- 지정한 위치만 라운드 처리를 하기 위해서 .rounded-{방향} 을 대신 사용 -->
+      <!-- 모양을 변경하기 위해서 .rounded-circle, .rounded-pill 을 대신 사용 -->
+
+      <div class="d-flex">
+        <div class="box2 bg-secondary rounded m-2">rounded</div>
+        <div class="box2 bg-secondary rounded-0 m-2">rounded-0</div>
+        <div class="box2 bg-secondary rounded-1 m-2">rounded-1</div>
+        <div class="box2 bg-secondary rounded-2 m-2">rounded-2</div>
+        <div class="box2 bg-secondary rounded-3 m-2">rounded-3</div>
+        <div class="box2 bg-secondary rounded-4 m-2">rounded-4</div>
+        <div class="box2 bg-secondary rounded-5 m-2">rounded-5</div>
+      </div>
+      <br>
+      <div class="d-flex">
+        <div class="box2 bg-secondary rounded-top m-2">rounded-top</div>
+        <div class="box2 bg-secondary rounded-bottom m-2">rounded-bottom</div>
+        <div class="box2 bg-secondary rounded-start m-2">rounded-start</div>
+        <div class="box2 bg-secondary rounded-end m-2">rounded-end</div>
+        <div class="box2 bg-secondary rounded-circle m-2">rounded-circle</div>
+        <div class="bg-secondary rounded-circle m-2" style="width: 200px; height: 100px;">rounded-circle</div>
+        <div class="bg-secondary rounded-pill m-2" style="width: 200px; height: 100px;">rounded-pill</div>
+      </div>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+      <h3>float, clearfix</h3>
+      <!-- css의 float을 쉽게 사용하기 위해서 부트스트랩에서 미리 디자인 됨 -->
+      <!-- 부모 태그에 .clearfix 를 클래스에 추가하고 자식 태그에 .float-{start|end} 를 클래스에 사용함 -->
+
+      <h4>부트스트랩로 clearfix 및 float 사용</h4>
+      <div class="clearfix">
+        <div class="box2 bg-primary float-start">float-start</div>
+        <div class="box2 bg-success float-end">float-end</div>
+      </div>
+      <br>
+      <h4>부트스트랩 없이 clearfix 및 float 사용</h4>
+      <div class="nobs-clearfix">
+        <div class="box2 bg-primary" style="float: left;"></div>
+        <div class="box2 bg-success" style="float: right;"></div>
+      </div>
+    </div>
+
+    <br><hr><br>
+    <div>
+      <h3>visible</h3>
+      <!-- css의 visibility 속성을 쉽게 사용하기 위해서 부트스트랩에서 미리 디자인함 -->
+      <!-- .visible, .invisible 을 추가하여 화면에 보이거나 숨김처리 함 -->
+
+      <div class="d-flex">
+        <div class="box2 bg-primary visible">visible</div> 
+        <div class="box2 bg-success invisible">invisible</div>
+        <div class="box2 bg-warning d-none">d-none</div>
+        <div class="box2 bg-info"></div>
+      </div>
+    </div>
+  
+    <br><hr><br>
+
+    <div>
+      <h3>width</h3>
+       <!-- 부모 태그의 너비를 기준으로 자신의 너비를 쉽게 지정할 수 있도록 부트스트랩에서 미리 디자인 함  -->
+       <!-- 자식 태그에 .w-{크기} 를 추가하여 사용, 25, 50, 75, 100, auto-->
+       <!-- max-width: 100% 를 위한 .mw-100 이 존재함 -->
+
+       <div class="border border-2" style="width: 1000px;">
+        <div class="bg-warning w-25">w-25</div>
+        <div class="bg-warning w-50">w-50</div>
+        <div class="bg-warning w-75">w-75</div>
+        <div class="bg-warning w-100">w-100</div>
+        <div class="bg-warning w-auto">w-auto</div>
+        <div class="bg-warning mw-100">mw-100</div>
+       </div>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+      <h3>height</h3>
+      <!-- 부모 태그의 높이를 기준으로 자신의 높이를 쉽게 지정할 수 있도록 부트스트랩에서 미리 디자인 함  -->
+      <!-- 자식 태그에 .h-{크기} 를 추가하여 사용, 25, 50, 75, 100, auto-->
+      <!-- max-height: 100% 를 위한 .mh-100 이 존재함 -->
+      <div class="border border-2 d-flex" style="height: 200px;">
+         <div class="bg-warning h-25" style="width: 100px;">h-25</div>
+         <div class="bg-warning h-50" style="width: 100px;">h-50</div>
+         <div class="bg-warning h-75" style="width: 100px;">h-75</div>
+         <div class="bg-warning h-100" style="width: 100px;">h-100</div>
+         <div class="bg-warning h-auto" style="width: 100px;">h-auto</div>
+         <div class="bg-warning mh-100" style="width: 100px;">mh-100</div>
+      </div>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+      <h3>shadow</h3>
+      <!-- css의 box-shadow 속성을 쉽게 사용하기 위해서 부트스트랩에서 미리 디자인 함 -->
+      <!-- .shadow 를 추가하여 사용함 -->
+      <!-- 크기 조절을 위해서 .shadow-{크기} 를 사용함, none, sm, lg -->
+      <div class="d-flex">
+        <div class="box2 m-5 shadow-none">shadow-none</div>
+        <div class="box2 m-5 shadow-sm">shadow-sm</div>
+        <div class="box2 m-5 shadow">shadow</div>
+        <div class="box2 m-5 shadow-lg">shadow-lg</div>
+      </div>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+      <h3>종횡비 사용하기</h3>
+      <!-- 외부 컨텐츠를 로드하여 사용 시 로드된 컨텐츠의 종횡비를 쉽게 설정하기 위해 부트스트랩이 미리 디자인함 -->
+      <!-- .ratio .ratio-{종횡비} 를 클래스에 추가하여 사용, 1x1, 4x3, 16x9, 21x9 -->
+
+      <div>
+        <h4>기본 화면</h4>
+        <div style="width: 640px;">
+          <iframe src="https://www.youtube.com/embed/PSajNbyau8k" title="독일은 어떻게 자동차 강국이 되었나? 영국의 헛발질에서 아우토반까지." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        
+
+        <h4>1:1</h4>
+        <div class="ratio ratio-1x1" style="width: 640px;">
+          <iframe src="https://www.youtube.com/embed/PSajNbyau8k" title="독일은 어떻게 자동차 강국이 되었나? 영국의 헛발질에서 아우토반까지." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <h4>4:3</h4>
+        <div class="ratio ratio-4x3" style="width: 640px;">
+          <iframe src="https://www.youtube.com/embed/PSajNbyau8k" title="독일은 어떻게 자동차 강국이 되었나? 영국의 헛발질에서 아우토반까지." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <h4>16:9</h4>
+        <div class="ratio ratio-16x9" style="width: 640px;">
+          <iframe src="https://www.youtube.com/embed/PSajNbyau8k" title="독일은 어떻게 자동차 강국이 되었나? 영국의 헛발질에서 아우토반까지." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <h4>21:9</h4>
+        <div class="ratio ratio-21x9" style="width: 640px;">
+          <iframe src="https://www.youtube.com/embed/PSajNbyau8k" title="독일은 어떻게 자동차 강국이 되었나? 영국의 헛발질에서 아우토반까지." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <br><hr><br>
+
+    <div>
+      <h3>Close button</h3>
+      <!-- 부트스트랩 5에서 추가된 클래스로 미리 디자인된 X 버튼을 생성함 -->
+      <!-- button, input 태그에 .btn-close 를 클래스를 추가하여 사용 -->
+
+      <div>
+        <input type="button" class="btn btn-primary" value="X">
+        <button type="button" class="btn btn-primary">X</button>
+        <input type="button" class="btn-close">
+        <button type="button" class="btn-close"></button>
+        <button type="button" class="btn-close" disabled></button>
+      </div>
+    </div>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
